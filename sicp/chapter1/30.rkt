@@ -9,10 +9,10 @@
          (sum term (next a) next b))))
 
 (define (sum2 term a next b)
-  (define (iter a result)
-    (if (> a b)
+  (define (iter cur result)
+    (if (> cur b)
         result
-        (iter (next a) (+ (term a) result))))
+        (iter (next cur) (+ (term cur) result))))
     (iter a 0))
 
 (define (identity x) x)

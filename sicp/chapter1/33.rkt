@@ -25,10 +25,10 @@
 ;--------------------------
 
 (define (filtered-accumulate filter combiner null-value term a next b)
-  (define (iter acc a)
-    (cond ((> a b) acc)
-          ((filter a) (iter (combiner acc (term a)) (next a)))
-          (else (iter acc (next a)))))
+  (define (iter acc cur)
+    (cond ((> cur b) acc)
+          ((filter cur) (iter (combiner acc (term cur)) (next cur)))
+          (else (iter acc (next cur)))))
   (iter null-value a))
 
 

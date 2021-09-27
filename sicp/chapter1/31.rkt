@@ -48,10 +48,10 @@
 ; в последовательности
 
 (define (product2 term a next b)
-  (define (iter acc a)
-    (if (> a b)
+  (define (iter acc cur)
+    (if (> cur b)
       acc
-      (iter (* acc (term a)) (next a))))
+      (iter (* acc (term cur)) (next cur))))
   (iter 1 a))
 
 (define (factorial2 n)

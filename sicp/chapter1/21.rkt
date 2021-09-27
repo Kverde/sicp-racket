@@ -13,8 +13,8 @@
 (define (divides? a b)
   (= (remainder b a) 0))
 
-(define (prime? n)
-  (= n (smallest-divisor n)))
+;(define (prime? n)
+;  (= n (smallest-divisor n)))
 
 (define (square n)
   (* n n))

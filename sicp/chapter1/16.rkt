@@ -25,9 +25,6 @@
 (define (double n)
   (* n 2))
 
-(define (odd? n)
-  (= (remainder n 2) 1))
-
 (define (fast-expt-iter b n)
   (define (iter acc cur-n)
     (cond ((= cur-n n) acc)

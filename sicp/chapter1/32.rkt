@@ -24,10 +24,10 @@
 ; итеративный вариант
 
 (define (accumulate2 combiner null-value term a next b)
-  (define (iter acc a)
-      (if (> a b)
+  (define (iter acc cur)
+      (if (> cur b)
           acc
-          (iter (combiner acc (term a)) (next a))))
+          (iter (combiner acc (term cur)) (next cur))))
   (iter null-value a))
 
 (define (sum2 term a next b)
