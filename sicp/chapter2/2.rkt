@@ -22,4 +22,9 @@
 (define (end-segnment p)
   (cdr p))
 
-(make-segment (make-point 1 1) (make-point 1 5))
+(define seg1 (make-segment (make-point 1 3) (make-point 2 5)))
+
+(check-equal? (x-point (start-segnment seg1)) 1)
+(check-equal? (y-point (start-segnment seg1)) 3)
+(check-equal? (x-point (end-segnment seg1)) 2)
+(check-equal? (y-point (end-segnment seg1)) 5)

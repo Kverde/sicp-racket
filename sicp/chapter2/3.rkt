@@ -36,13 +36,13 @@
 ; подразумевается что стороны прямоугольника паралельны осям координат
 
 (define (rect-area rect)
-  (let ((p1 (lt-point rect))
-        (p2 (rb-point rect)))
+  (let ([p1 (lt-point rect)]
+        [p2 (rb-point rect)])
     (* (x-distance p1 p2) (y-distance p1 p2))))
 
 (define (rect-per rect)
-  (let ((p1 (lt-point rect))
-        (p2 (rb-point rect)))
+  (let ([p1 (lt-point rect)]
+        [p2 (rb-point rect)])
     (+ (* (x-distance p1 p2) 2)
        (* (y-distance p1 p2) 2))))
 
@@ -58,5 +58,15 @@
 
 (define (make-rect2 p1 w h)
   (cons p1 (make-rect-size w h)))
+
+(define (w-rect rect)
+  (car (cdr rect)))
+
+(define (h-rect rect)
+  (cdr (cdr rect)))
+
+(define rect2 (make-rect2 (make-point 1 1) 5 8))
+(check-equal? (w-rect rect2) 5)
+(check-equal? (h-rect rect2) 8)
 
 ; интерфейс и использование процедур для нахождения переметра и площади будет полностью совпадать
